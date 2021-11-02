@@ -100,12 +100,4 @@ public class ImplementsReservationService implements ReservationService{
         }
     }
 
-    /**
-    @Override
-    public Reservation crearReservacion(Reservation reservacion) {
-        // TODO Auto-generated method stub
-        return null;
-    }    
-    */
-
 }

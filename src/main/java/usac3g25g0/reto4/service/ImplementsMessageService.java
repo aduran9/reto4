@@ -61,12 +61,4 @@ public class ImplementsMessageService implements MessageService{
         }
     }
 
-    /**
-    @Override
-    public Message crearMensaje(Message mensaje) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-    */
-
 }

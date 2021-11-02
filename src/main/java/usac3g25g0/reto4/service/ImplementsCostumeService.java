@@ -76,12 +76,4 @@ public class ImplementsCostumeService implements CostumeService{
         }
     }
 
-    /** 
-    @Override
-    public Costume crearDisfraz(Costume disfraz) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-    */
-
 }

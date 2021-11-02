@@ -65,12 +65,4 @@ public class ImplementsCategoryService implements CategoryService{
         }    
     }
 
-    /**
-    @Override
-    public Client crearCategoria(Category categoria) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-    */
-
 }

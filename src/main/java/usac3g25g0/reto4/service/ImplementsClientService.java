@@ -76,12 +76,4 @@ public class ImplementsClientService implements ClientService{
         }
     }
 
-    /**
-    @Override
-    public Client crearCliente(Client cliente) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-    */
-
 }
