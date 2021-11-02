@@ -9,27 +9,51 @@ import org.springframework.stereotype.Service;
 import usac3g25g0.reto4.model.Reservation;
 import usac3g25g0.reto4.repository.ReservationRepository;
 
+
+/**
+ * @Author Andres Duran
+ * Clase Implements Reservation Service
+ */
+
 @Service
 public class ImplementsReservationService implements ReservationService{
 
+     /**
+     * Inyeccion de dependencias del repositorio
+     */
     @Autowired
     ReservationRepository repositorioReservacion;
 
+    /**
+     * Metodo para obtener todos los registros
+     */    
     @Override
     public List<Reservation> listarReservaciones() {
         return (List<Reservation>) repositorioReservacion.findAll();
     }
 
+    /**
+     * Metodo para obtener una reservacion por ID
+     */
     @Override
     public Optional<Reservation> listarReservacionId(Integer id) {
         return repositorioReservacion.findById(id);
     }
 
+    /**
+     * Metodo para guardar registros
+     * @param reservacion
+     * @return
+     */  
     @Override
     public Reservation crearReservacion(Reservation reservacion) {
         return repositorioReservacion.save(reservacion);
     }
 
+    /**
+     * Metodo para borrar registros
+     * @param id
+     */    
     @Override
     public boolean borrarReservacion(Integer id) {
         boolean estado=true;
@@ -42,6 +66,11 @@ public class ImplementsReservationService implements ReservationService{
         return estado;
     }
 
+    /**
+     * Metodo para actualizar registros
+     * @param reservacion
+     * @return
+     */    
     @Override
     public Reservation actualizaReservacion (Reservation reservacion) {
 
