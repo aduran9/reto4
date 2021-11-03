@@ -6,6 +6,12 @@ public class CountClient {
     private Long total;
     private Client client;
     
+    public CountClient(){
+        /**
+         * Constructor Vacio
+         */
+    }
+
     public CountClient(Long total, Client client) {
         this.total = total;
         this.client = client;

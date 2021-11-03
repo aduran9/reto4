@@ -3,6 +3,12 @@ package usac3g25g0.reto4.reports;
 public class ReservationStatus {
     private Integer completed;
     private Integer cancelled;
+
+    public ReservationStatus(){
+        /**
+         * Constructor Vacio
+         */
+    }
     
     public ReservationStatus(Integer completed, Integer cancelled) {
         this.completed = completed;

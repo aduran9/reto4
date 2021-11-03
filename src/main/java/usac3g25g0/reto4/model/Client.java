@@ -49,8 +49,8 @@ public class Client implements Serializable {
     /**
      * Relacion uno a muchos con entidad Reservation
      */
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    @JsonIgnoreProperties({"costume","client"})
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
+    @JsonIgnoreProperties({"client"})
     private List<Reservation> reservations;    
     
     public Client() {
@@ -59,12 +59,12 @@ public class Client implements Serializable {
          */
     }
 
-    public Client(Integer idClient, String email, String password, String name, Integer age, List<Message> messages,
+    public Client(Integer idClient, String name, String email, String password, Integer age, List<Message> messages,
             List<Reservation> reservations) {
         this.idClient = idClient;
+        this.name = name;
         this.email = email;
         this.password = password;
-        this.name = name;
         this.age = age;
         this.messages = messages;
         this.reservations = reservations;
@@ -76,6 +76,14 @@ public class Client implements Serializable {
 
     public void setIdClient(Integer idClient) {
         this.idClient = idClient;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -92,14 +100,6 @@ public class Client implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Integer getAge() {
@@ -126,6 +126,5 @@ public class Client implements Serializable {
         this.reservations = reservations;
     }
 
-    
 }
 
