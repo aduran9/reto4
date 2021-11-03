@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import usac3g25g0.reto4.model.Reservation;
+import usac3g25g0.reto4.reports.CountClient;
+import usac3g25g0.reto4.reports.ReservationStatus;
 import usac3g25g0.reto4.service.ImplementsReservationService;
 
 @RestController
@@ -54,5 +56,20 @@ public class ReservationController {
     @ResponseStatus(HttpStatus.CREATED)
     public Reservation actualizarReservacion(@RequestBody Reservation reservacion){
         return serviciosReservacion.actualizaReservacion(reservacion);
+    }
+
+    @GetMapping("/report-status")
+    public ReservationStatus getReservationsStatusReport(){
+        return serviciosReservacion.getReservationStatusReport();
+    }
+
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReservationReportDate(@PathVariable("dateOne") String dateOne, @PathVariable("dateTwo") String dateTwo){
+        return serviciosReservacion.getReservationPeriod(dateOne, dateTwo);
+    }
+
+    @GetMapping("/report-clients")
+    public List<CountClient> getClients(){
+        return serviciosReservacion.getTopClients();
     }
 }

@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.stereotype.Component;
 
 import usac3g25g0.reto4.model.Reservation;
+import usac3g25g0.reto4.reports.CountClient;
+import usac3g25g0.reto4.reports.ReservationStatus;
 
 @Component
 public interface ReservationService {
@@ -15,4 +17,8 @@ public interface ReservationService {
     public Reservation crearReservacion(Reservation reservacion);
     public boolean borrarReservacion(Integer id);
     public Reservation actualizaReservacion(Reservation reservacion);
+    public List<Reservation> getReservationByStatus(String status);
+    public ReservationStatus getReservationStatusReport();
+    public List<Reservation> getReservationPeriod(String dateOne, String dateTwo);
+    public List<CountClient> getTopClients();
 }
